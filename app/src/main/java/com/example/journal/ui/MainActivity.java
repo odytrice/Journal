@@ -157,12 +157,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(_user != null) {
+            _model.fetchEntries(_user.userId);
+        }
+    }
+
     private void showUser(User user) {
         if (user != null) {
             _binding.toolbar.getMenu().findItem(R.id.action_sign_in).setVisible(false);
             _binding.toolbar.getMenu().findItem(R.id.action_sign_out).setVisible(true);
-            _model.fetchEntries(user.userId);
             _user = user;
+            _model.fetchEntries(user.userId);
         } else {
             _binding.toolbar.getMenu().findItem(R.id.action_sign_out).setVisible(false);
             _binding.toolbar.getMenu().findItem(R.id.action_sign_in).setVisible(true);

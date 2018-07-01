@@ -13,7 +13,7 @@ import java.util.List;
 
 @Dao
 public interface EntryDao {
-    @Query("SELECT * FROM Entry WHERE userId == :userId")
+    @Query("SELECT * FROM Entry WHERE userId = :userId")
     List<Entry> getEntries(String userId);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -21,4 +21,7 @@ public interface EntryDao {
 
     @Delete
     int DeleteEntry(Entry entry);
+
+    @Query("SELECT * FROM Entry WHERE entryId = :entryId")
+    Entry getEntry(int entryId);
 }

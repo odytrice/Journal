@@ -24,6 +24,7 @@ public class DetailsViewModel extends ViewModel {
     private UserDao _user;
 
     private MutableLiveData<User> _liveUser = new MutableLiveData<>();
+    private MutableLiveData<Entry> _liveEntry = new MutableLiveData<>();
     private MutableLiveData<List<Entry>> _liveEntries = new MutableLiveData<>();
 
     DetailsViewModel(UserDao user, EntryDao entry, IBackendService server) {
@@ -82,5 +83,13 @@ public class DetailsViewModel extends ViewModel {
             _liveEntries.postValue(entries);
         });
 
+    }
+
+    public LiveData<Entry> getEntry(int entryId) {
+        AppExecutors.getInstance().diskIO().execute(() -> {
+            Entry entry = _entry.getEntry(entryId);
+            _liveEntry.postValue(entry);
+        });
+        return _liveEntry;
     }
 }

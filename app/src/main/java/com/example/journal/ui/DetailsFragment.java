@@ -57,6 +57,13 @@ public class DetailsFragment extends Fragment {
 
         _model = ViewModelProviders.of(getActivity(), new ViewModelFactory(getContext())).get(DetailsViewModel.class);
 
+        _model.getEntry(entryId).observe(this,entry -> {
+            binding.setEntry(entry);
+            ((INavigationController)getActivity()).setTitle(entry.title);
+        });
+
+
+
         binding.btnEdit.setOnClickListener(v ->{
             CreateFragment fragment = CreateFragment.newInstance(entryId);
             ((INavigationController)getActivity()).moveToFragment(fragment);

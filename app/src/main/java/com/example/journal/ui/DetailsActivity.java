@@ -16,6 +16,8 @@ public class DetailsActivity extends AppCompatActivity implements INavigationCon
 
     public static final String EXTRA_ENTRYID = "extra_entry";
 
+    private Toolbar _toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +27,8 @@ public class DetailsActivity extends AppCompatActivity implements INavigationCon
         if(action == null) action = ACTIONS.CREATE;
 
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setNavigationOnClickListener((View v) -> onBackPressed());
+        _toolbar = findViewById(R.id.toolbar);
+        _toolbar.setNavigationOnClickListener((View v) -> onBackPressed());
 
 
         int entryId = getIntent().getIntExtra(EXTRA_ENTRYID,0);
@@ -48,6 +50,11 @@ public class DetailsActivity extends AppCompatActivity implements INavigationCon
                         .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                         .replace(R.id.container, fragment, "")
                         .commit();
+    }
+
+    @Override
+    public void setTitle(String title) {
+        _toolbar.setTitle(title);
     }
 
     public static class ACTIONS {

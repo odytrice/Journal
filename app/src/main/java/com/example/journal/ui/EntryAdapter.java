@@ -110,9 +110,11 @@ public class EntryAdapter extends RecyclerView.Adapter<EntryAdapter.ViewHolder>{
 
         void bind(Entry entry) {
             _binding.setEntry(entry);
-            SimpleDateFormat format = new SimpleDateFormat("MMM dd, yyyy", Locale.US);
-            _binding.txtDate.setText(format.format(entry.createdDate));
 
+            if(entry.createdDate != null) {
+                SimpleDateFormat format = new SimpleDateFormat("MMM dd, yyyy", Locale.US);
+                _binding.txtDate.setText(format.format(entry.createdDate));
+            }
             _binding.getRoot().setOnClickListener(v ->{
                 if(_consumer != null) _consumer.accept(entry);
             });

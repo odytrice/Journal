@@ -20,11 +20,11 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="32dp"
             android:ems="10"
-            android:textStyle="bold"
-            android:textSize="24dp"
             android:text="@{entry.title}"
+            android:textSize="24dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -33,7 +33,7 @@
         <TextView
             android:id="@+id/txtText"
             android:layout_width="349dp"
-            android:layout_height="485dp"
+            android:layout_height="456dp"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
@@ -42,13 +42,13 @@
             android:gravity="top"
             android:inputType="textPersonName"
             android:text="@{entry.text}"
-            tools:text="Description"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtTitle"
-            app:layout_constraintVertical_bias="0.113" />
+            app:layout_constraintVertical_bias="0.113"
+            tools:text="Description" />
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/btnEdit"
@@ -56,7 +56,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_marginEnd="16dp"
-            android:src="@drawable/ic_save_white_24dp"
+            android:tint="@android:color/black"
+            android:src="@drawable/ic_edit_white_24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </android.support.constraint.ConstraintLayout>
