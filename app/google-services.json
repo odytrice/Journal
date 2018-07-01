@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "341952875835",
+    "firebase_url": "https://journalapp-odytrice.firebaseio.com",
+    "project_id": "journalapp-odytrice",
+    "storage_bucket": "journalapp-odytrice.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341952875835:android:7a1620b0ae47a428",
+        "android_client_info": {
+          "package_name": "com.example.journal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341952875835-6hj1hncbhfso2fft5ic65oh3mqijh86g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.journal",
+            "certificate_hash": "f22293747cd3c7ed7f6b24ee9b8238699683c2cd"
+          }
+        },
+        {
+          "client_id": "341952875835-aihhheinfueur8ops4l2jlca8pdk3gj4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoUy-4LBOYqRkz7lZ5N-Ne4487EPmIHkI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341952875835-aihhheinfueur8ops4l2jlca8pdk3gj4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
