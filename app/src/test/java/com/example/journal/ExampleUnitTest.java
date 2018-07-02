@@ -1,5 +1,7 @@
 package com.example.journal;
 
+import com.example.journal.ui.MainViewModel;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;

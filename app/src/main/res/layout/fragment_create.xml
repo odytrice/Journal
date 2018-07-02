@@ -9,69 +9,56 @@
             name="entry"
             type="com.example.journal.core.models.Entry" />
     </data>
-
-    <android.support.constraint.ConstraintLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.CreateFragment">
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.CreateFragment">
 
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/label_title"
-            app:layout_constraintStart_toStartOf="@+id/txtTitle"
-            app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="0dp"
+                android:ems="10"
+                android:hint="@string/label_title"
+                android:inputType="textPersonName"
+                tools:text="Title" />
 
-        <EditText
-            android:id="@+id/txtTitle"
-            android:layout_width="348dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:text="Title" />
+            <EditText
+                android:id="@+id/txtText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_margin="20dp"
+                android:background="#eeee"
+                android:ems="10"
+                android:gravity="top"
+                android:hint="@string/label_text"
+                android:inputType="textPersonName"
+                tools:text="Description" />
 
-        <EditText
-            android:id="@+id/txtText"
-            android:layout_width="349dp"
-            android:layout_height="398dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:background="#eeee"
-            android:ems="10"
-            android:gravity="top"
-            android:hint="@string/label_text"
-            android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="@+id/txtTitle"
-            app:layout_constraintHorizontal_bias="0.666"
-            app:layout_constraintStart_toStartOf="@+id/txtTitle"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            tools:text="Description" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="@string/label_text"
-            app:layout_constraintStart_toStartOf="@+id/txtText"
-            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
-
+        </LinearLayout>
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/btnSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_marginEnd="16dp"
+            android:layout_gravity="bottom|right"
             android:tint="@android:color/black"
             android:src="@drawable/ic_save_white_24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
-    </android.support.constraint.ConstraintLayout>
+    </FrameLayout>
+
+
 </layout>
